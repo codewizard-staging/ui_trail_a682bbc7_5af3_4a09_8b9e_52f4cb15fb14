@@ -1,0 +1,482 @@
+{
+        "department": [
+                        {
+                            "key": "DeptID",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "DeptName",
+                            "label": "DeptName",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "DeptName is required"
+                            ]
+                        },
+                        {
+                            "key": "DeptHOD",
+                            "label": "DeptHOD",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "DeptHOD is required"
+                            ]
+                        },
+                        {
+                            "key": "DeptSize",
+                            "label": "DeptSize",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Int32",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "DeptSize is required"
+                            ]
+                        },
+                    {
+                        "key": "DepartmentHas",
+                        "type": "keyid"
+                    },
+                                    {
+                        "key": "DepartmentBranchbelongsto",
+                        "type": "keyid"
+                    }  
+                        ]
+,        "college": [
+                        {
+                            "key": "CollegeID",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "CollegeName",
+                            "label": "CollegeName",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "CollegeName is required"
+                            ]
+                        },
+                        {
+                            "key": "CollegePhNum",
+                            "label": "CollegePhNum",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Int64",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "CollegePhNum is required"
+                            ]
+                        },
+                        {
+                            "key": "CollegeAddress",
+                            "label": "CollegeAddress",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "CollegeAddress is required"
+                            ]
+                        },
+                    {
+                        "key": "CollegeAdmissioned",
+                        "type": "keyid"
+                    },
+                                    {
+                        "key": "CollegeCoursesOffered",
+                        "type": "keyid"
+                    },
+                                    {
+                        "key": "CollegeCollegeStaff",
+                        "type": "keyid"
+                    }  
+                        ]
+,        "previouseducation": [
+                        {
+                            "key": "EducationName",
+                            "label": "EducationName",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "EducationName is required"
+                            ]
+                        },
+                        {
+                            "key": "FromYear",
+                            "label": "FromYear",
+                            "type": "date",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "FromYear is required"
+                            ]
+                        },
+                        {
+                            "key": "ToYear",
+                            "label": "ToYear",
+                            "type": "date",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "ToYear is required"
+                            ]
+                        },
+                        {
+                            "key": "BoardName",
+                            "label": "BoardName",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "BoardName is required"
+                            ]
+                        },
+                        {
+                            "key": "EducationID",
+                            "type": "keyid"
+                        } 
+        ]
+,        "student": [
+                        {
+                            "key": "StudentID",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "StudentName",
+                            "label": "StudentName",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "StudentName is required"
+                            ]
+                        },
+                        {
+                            "key": "StudentAddress",
+                            "label": "StudentAddress",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "StudentAddress is required"
+                            ]
+                        },
+                        {
+                            "key": "ParentNames",
+                            "label": "ParentNames",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "ParentNames is required"
+                            ]
+                        },
+                        {
+                            "key": "PhoneNumber",
+                            "label": "PhoneNumber",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Int64",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "PhoneNumber is required"
+                            ]
+                        },
+                        {
+                            "key": "State",
+                            "label": "State",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "State is required"
+                            ]
+                        },
+                        {
+                            "key": "CompetitiveExamRank",
+                            "label": "CompetitiveExamRank",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "CompetitiveExamRank is required"
+                            ]
+                        },
+                    {
+                        "key": "StudentEnrolledWith",
+                        "type": "keyid"
+                    },
+                                    {
+                        "key": "StudentEducationDetails",
+                        "type": "keyid"
+                    }  
+                        ]
+,        "course": [
+                        {
+                            "key": "CourseID",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "CourseName",
+                            "label": "CourseName",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "CourseName is required"
+                            ]
+                        },
+                        {
+                            "key": "CourseDuration",
+                            "label": "CourseDuration",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Int32",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "CourseDuration is required"
+                            ]
+                        },
+                        {
+                            "key": "NoOfStudentEnrolled",
+                            "label": "NoOfStudentEnrolled",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Int32",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "NoOfStudentEnrolled is required"
+                            ]
+                        },
+                    {
+                        "key": "CourseContains",
+                        "type": "keyid"
+                    }  
+                        ]
+,        "lecturer": [
+                        {
+                            "key": "StaffID",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "StaffName",
+                            "label": "StaffName",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "StaffName is required"
+                            ]
+                        },
+                        {
+                            "key": "PhoneNumber",
+                            "label": "PhoneNumber",
+                            "type": "dropdown",
+                            "valueId": "Value",
+                            "nameId": "Name",
+                            "contentId": "Name",
+                            "source": "Edm.Int64",
+                            "editable": true,
+                            "validators": [
+                                "required",
+                                "isNumber"
+                            ],
+                            "validationMessages": [
+                                "PhoneNumber is required"
+                            ]
+                        },
+                        {
+                            "key": "Address",
+                            "label": "Address",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Address is required"
+                            ]
+                        },
+                        {
+                            "key": "Specialization",
+                            "label": "Specialization",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Specialization is required"
+                            ]
+                        },
+                    {
+                        "key": "LecturerTeaches",
+                        "type": "keyid"
+                    }  
+                        ]
+,        "subject": [
+                        {
+                            "key": "SubjectID",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "Subject1Name",
+                            "label": "Subject1Name",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Subject1Name is required"
+                            ]
+                        },
+                        {
+                            "key": "Subject2Name",
+                            "label": "Subject2Name",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Subject2Name is required"
+                            ]
+                        },
+                        {
+                            "key": "Subject3Name",
+                            "label": "Subject3Name",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Subject3Name is required"
+                            ]
+                        },
+                        {
+                            "key": "Subject4Name",
+                            "label": "Subject4Name",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Subject4Name is required"
+                            ]
+                        },
+                        {
+                            "key": "Subject5Name",
+                            "label": "Subject5Name",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Subject5Name is required"
+                            ]
+                        },
+                        {
+                            "key": "Subject6Name",
+                            "label": "Subject6Name",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Subject6Name is required"
+                            ]
+                        },
+                        {
+                            "key": "Lab1",
+                            "label": "Lab1",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Lab1 is required"
+                            ]
+                        },
+                        {
+                            "key": "Lab2",
+                            "label": "Lab2",
+                            "type": "text",
+                                "editable": true,
+                                "validators": [
+                                    "required"
+                                ],
+                                "validationMessages": [
+                                    "Lab2 is required"
+                                ]
+                            }
+        ]
+}

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Model">
+            <EntityType HasStream="false" Name="College">
+                <Key>
+                    <PropertyRef Name="CollegeID"/>
+                </Key>
+                <Property Name="CollegeID" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="CollegeName" Type="Edm.String" isUnique="false"/>
+                <Property Name="CollegePhNum" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="CollegeAddress" Type="Edm.String" isUnique="false"/>
+                <NavigationProperty Name="Admissioned" Type="Collection(Model.Student)"/>
+                <NavigationProperty Name="CoursesOffered" Type="Collection(Model.Course)"/>
+                <NavigationProperty Name="CollegeStaff" Type="Collection(Model.Department)"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Subject">
+                <Key>
+                    <PropertyRef Name="SubjectID"/>
+                </Key>
+                <Property Name="SubjectID" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="Subject1Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="Subject2Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="Subject3Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="Subject4Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="Subject5Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="Subject6Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="Lab1" Type="Edm.String" isUnique="false"/>
+                <Property Name="Lab2" Type="Edm.String" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Department">
+                <Key>
+                    <PropertyRef Name="DeptID"/>
+                </Key>
+                <Property Name="DeptID" Type="Edm.String" isUnique="false"/>
+                <Property Name="DeptName" Type="Edm.String" isUnique="false"/>
+                <Property Name="DeptHOD" Type="Edm.String" isUnique="false"/>
+                <Property Name="DeptSize" Type="Edm.Int32" isUnique="false"/>
+                <NavigationProperty Name="Has" Type="Collection(Model.Lecturer)"/>
+                <NavigationProperty Name="Branchbelongsto" Type="Model.Course"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="PreviousEducation">
+                <Key>
+                    <PropertyRef Name="EducationID"/>
+                </Key>
+                <Property Name="EducationName" Type="Edm.String" isUnique="false"/>
+                <Property Name="FromYear" Type="Edm.DateTimeOffset" isUnique="false"/>
+                <Property Name="ToYear" Type="Edm.DateTimeOffset" isUnique="false"/>
+                <Property Name="BoardName" Type="Edm.String" isUnique="false"/>
+                <Property Name="EducationID" Type="Edm.Int32" isUnique="false"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Student">
+                <Key>
+                    <PropertyRef Name="StudentID"/>
+                </Key>
+                <Property Name="StudentID" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="StudentName" Type="Edm.String" isUnique="false"/>
+                <Property Name="StudentAddress" Type="Edm.String" isUnique="false"/>
+                <Property Name="ParentNames" Type="Edm.String" isUnique="false"/>
+                <Property Name="PhoneNumber" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="State" Type="Edm.String" isUnique="false"/>
+                <Property Name="CompetitiveExamRank" Type="Edm.String" isUnique="false"/>
+                <NavigationProperty Name="EnrolledWith" Type="Model.Course"/>
+                <NavigationProperty Name="EducationDetails" Type="Collection(Model.PreviousEducation)"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Course">
+                <Key>
+                    <PropertyRef Name="CourseID"/>
+                </Key>
+                <Property Name="CourseID" Type="Edm.String" isUnique="false"/>
+                <Property Name="CourseName" Type="Edm.String" isUnique="false"/>
+                <Property Name="CourseDuration" Type="Edm.Int32" isUnique="false"/>
+                <Property Name="NoOfStudentEnrolled" Type="Edm.Int32" isUnique="false"/>
+                <NavigationProperty Name="Contains" Type="Collection(Model.Subject)"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Lecturer">
+                <Key>
+                    <PropertyRef Name="StaffID"/>
+                </Key>
+                <Property Name="StaffID" Type="Edm.String" isUnique="false"/>
+                <Property Name="StaffName" Type="Edm.String" isUnique="false"/>
+                <Property Name="PhoneNumber" Type="Edm.Int64" isUnique="false"/>
+                <Property Name="Address" Type="Edm.String" isUnique="false"/>
+                <Property Name="Specialization" Type="Edm.String" isUnique="false"/>
+                <NavigationProperty Name="Teaches" Type="Collection(Model.Subject)"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="Colleges" EntityType="Model.College">
+                    <NavigationPropertyBinding Path="Admissioned" Target="Students"/>
+                    <NavigationPropertyBinding Path="CoursesOffered" Target="Courses"/>
+                    <NavigationPropertyBinding Path="CollegeStaff" Target="Departments"/>
+                </EntitySet>
+                <EntitySet Name="Subjects" EntityType="Model.Subject"/>
+                <EntitySet Name="Departments" EntityType="Model.Department">
+                    <NavigationPropertyBinding Path="Has" Target="Lecturers"/>
+                    <NavigationPropertyBinding Path="Branchbelongsto" Target="Courses"/>
+                </EntitySet>
+                <EntitySet Name="PreviousEducations" EntityType="Model.PreviousEducation"/>
+                <EntitySet Name="Students" EntityType="Model.Student">
+                    <NavigationPropertyBinding Path="EnrolledWith" Target="Courses"/>
+                    <NavigationPropertyBinding Path="EducationDetails" Target="PreviousEducations"/>
+                </EntitySet>
+                <EntitySet Name="Courses" EntityType="Model.Course">
+                    <NavigationPropertyBinding Path="Contains" Target="Subjects"/>
+                </EntitySet>
+                <EntitySet Name="Lecturers" EntityType="Model.Lecturer">
+                    <NavigationPropertyBinding Path="Teaches" Target="Subjects"/>
+                </EntitySet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
